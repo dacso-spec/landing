@@ -1,0 +1,1182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-Frame-Options" content="ALLOWALL">
+    <meta http-equiv="Content-Security-Policy" content="frame-ancestors *;">
+    <title>Tempus - Smart Investing Made Simple | Coming Soon</title>
+    
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Stop losing to inflation. Tempus intelligently invests your spare cash on autopilot so you can focus on your life while your money works for you over time.">
+    <meta name="keywords" content="investing, automated investing, robo advisor, smart investing, inflation protection, wealth building, tempus">
+    <meta name="author" content="Tempus">
+    <meta name="robots" content="index, follow">
+    
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Tempus - Smart Investing Made Simple | Coming Soon">
+    <meta property="og:description" content="Stop losing to inflation. Tempus intelligently invests your spare cash on autopilot so you can focus on your life while your money works for you over time.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.tempus.app">
+    <meta property="og:image" content="https://www.tempus.app/tempus-preview.jpg">
+    <meta property="og:site_name" content="Tempus">
+    
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Tempus - Smart Investing Made Simple | Coming Soon">
+    <meta name="twitter:description" content="Stop losing to inflation. Tempus intelligently invests your spare cash on autopilot so you can focus on your life while your money works for you over time.">
+    <meta name="twitter:image" content="https://www.tempus.app/tempus-preview.jpg">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="logo.png">
+    <link rel="shortcut icon" type="image/png" href="logo.png">
+    <link rel="apple-touch-icon" href="logo.png">
+    
+    <!-- External Resources -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            min-height: 100vh;
+            overflow-x: hidden;
+            margin: 0;
+            padding: 0;
+        }
+        
+        /* Iframe compatibility */
+        html, body {
+            height: 100%;
+            width: 100%;
+        }
+        
+        /* Ensure proper display in iframe */
+        .container {
+            width: 100%;
+            max-width: none;
+        }
+        
+        .gradient-bg {
+            background: linear-gradient(135deg, rgba(16, 185, 129, 0.1) 0%, rgba(59, 130, 246, 0.1) 100%);
+            animation: gradientShift 8s ease-in-out infinite;
+        }
+        
+        @keyframes gradientShift {
+            0%, 100% { background: linear-gradient(135deg, rgba(16, 185, 129, 0.1) 0%, rgba(59, 130, 246, 0.1) 100%); }
+            50% { background: linear-gradient(135deg, rgba(59, 130, 246, 0.1) 0%, rgba(16, 185, 129, 0.1) 100%); }
+        }
+        
+        /* Enhanced floating shapes with more variety */
+        .floating-shape {
+            position: absolute;
+            border-radius: 50%;
+            background: linear-gradient(45deg, rgba(16, 185, 129, 0.3), rgba(59, 130, 246, 0.3));
+            animation: float 6s ease-in-out infinite;
+        }
+        
+        .floating-shape:nth-child(1) {
+            width: 80px;
+            height: 80px;
+            top: 10%;
+            left: 10%;
+            animation-delay: 0s;
+        }
+        
+        .floating-shape:nth-child(2) {
+            width: 120px;
+            height: 120px;
+            top: 70%;
+            right: 10%;
+            animation-delay: 2s;
+        }
+        
+        .floating-shape:nth-child(3) {
+            width: 60px;
+            height: 60px;
+            top: 40%;
+            left: 80%;
+            animation-delay: 4s;
+        }
+        
+        .floating-shape:nth-child(4) {
+            width: 100px;
+            height: 100px;
+            top: 20%;
+            right: 30%;
+            animation-delay: 1s;
+            border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
+        }
+        
+        .floating-shape:nth-child(5) {
+            width: 70px;
+            height: 70px;
+            top: 60%;
+            left: 20%;
+            animation-delay: 3s;
+            border-radius: 20% 80% 20% 80% / 80% 20% 80% 20%;
+        }
+        
+        @keyframes float {
+            0%, 100% { transform: translateY(0px) rotate(0deg) scale(1); }
+            25% { transform: translateY(-15px) rotate(90deg) scale(1.1); }
+            50% { transform: translateY(-20px) rotate(180deg) scale(0.9); }
+            75% { transform: translateY(-10px) rotate(270deg) scale(1.05); }
+        }
+        
+        /* Animated particles */
+        .particle {
+            position: absolute;
+            width: 4px;
+            height: 4px;
+            background: linear-gradient(45deg, #10b981, #3b82f6);
+            border-radius: 50%;
+            animation: particleFloat 8s linear infinite;
+        }
+        
+        .particle:nth-child(1) { left: 10%; animation-delay: 0s; }
+        .particle:nth-child(2) { left: 20%; animation-delay: 1s; }
+        .particle:nth-child(3) { left: 30%; animation-delay: 2s; }
+        .particle:nth-child(4) { left: 40%; animation-delay: 3s; }
+        .particle:nth-child(5) { left: 50%; animation-delay: 4s; }
+        .particle:nth-child(6) { left: 60%; animation-delay: 5s; }
+        .particle:nth-child(7) { left: 70%; animation-delay: 6s; }
+        .particle:nth-child(8) { left: 80%; animation-delay: 7s; }
+        .particle:nth-child(9) { left: 90%; animation-delay: 8s; }
+        
+        @keyframes particleFloat {
+            0% { transform: translateY(100vh) scale(0); opacity: 0; }
+            10% { opacity: 1; }
+            90% { opacity: 1; }
+            100% { transform: translateY(-100px) scale(1); opacity: 0; }
+        }
+        
+        /* Enhanced fade-in with stagger */
+        .fade-in {
+            animation: fadeIn 1s ease-out;
+        }
+        
+        .fade-in-delay-1 {
+            animation: fadeIn 1s ease-out 0.2s both;
+        }
+        
+        .fade-in-delay-2 {
+            animation: fadeIn 1s ease-out 0.4s both;
+        }
+        
+        .fade-in-delay-3 {
+            animation: fadeIn 1s ease-out 0.6s both;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        /* Enhanced hover effects */
+        .hover-scale {
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        
+        .hover-scale:hover {
+            transform: scale(1.05) translateY(-5px);
+            box-shadow: 0 20px 40px -12px rgba(0, 0, 0, 0.25);
+        }
+        
+        /* Pulse animation for CTA */
+        .pulse-glow {
+            animation: pulseGlow 2s ease-in-out infinite;
+        }
+        
+        @keyframes pulseGlow {
+            0%, 100% { box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7); }
+            50% { box-shadow: 0 0 0 20px rgba(16, 185, 129, 0); }
+        }
+        
+        /* Typing animation for headline */
+        .typing-animation {
+            overflow: hidden;
+            border-right: 2px solid #10b981;
+            white-space: nowrap;
+            animation: typing 3s steps(40, end), blink-caret 0.75s step-end infinite;
+        }
+        
+        @keyframes typing {
+            from { width: 0; }
+            to { width: 100%; }
+        }
+        
+        @keyframes blink-caret {
+            from, to { border-color: transparent; }
+            50% { border-color: #10b981; }
+        }
+        
+        /* Card hover effects */
+        .card-hover {
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            transform-style: preserve-3d;
+        }
+        
+        .card-hover:hover {
+            transform: translateY(-10px) rotateX(5deg);
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+        }
+        
+        /* Countdown number animation */
+        .countdown-number {
+            background: linear-gradient(135deg, #10b981, #059669);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            animation: numberPulse 1s ease-in-out;
+        }
+        
+        @keyframes numberPulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+            100% { transform: scale(1); }
+        }
+        
+        /* Gradient text animation */
+        .gradient-text {
+            background: linear-gradient(45deg, #10b981, #3b82f6, #10b981);
+            background-size: 200% 200%;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            animation: gradientMove 3s ease-in-out infinite;
+        }
+        
+        @keyframes gradientMove {
+            0%, 100% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+        }
+        
+        /* Floating action button */
+        .fab {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, #10b981, #059669);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 10px 30px rgba(16, 185, 129, 0.3);
+            animation: fabFloat 3s ease-in-out infinite;
+            cursor: pointer;
+            z-index: 1000;
+        }
+        
+        @keyframes fabFloat {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+        }
+        
+        .fab:hover {
+            transform: scale(1.1);
+            box-shadow: 0 15px 40px rgba(16, 185, 129, 0.4);
+        }
+        
+        .phone-mockup {
+            max-width: 300px;
+            border-radius: 30px;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+            object-fit: cover;
+            width: 100%;
+            height: auto;
+        }
+        
+        .footer-copyright {
+            background: rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(10px);
+            border-top: 1px solid rgba(59, 130, 246, 0.1);
+        }
+        
+        .dacso-brand {
+            color: #10b981;
+            font-weight: 600;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        
+        .dacso-brand:hover {
+            color: #059669;
+        }
+        
+        .demo-notice {
+            background: linear-gradient(135deg, #fef3c7, #fde68a);
+            border: 1px solid #f59e0b;
+            color: #92400e;
+            padding: 12px 20px;
+            border-radius: 8px;
+            font-size: 14px;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        
+        /* Mobile Optimizations */
+        @media (max-width: 768px) {
+            .demo-notice {
+                padding: 10px 16px;
+                font-size: 13px;
+                margin-bottom: 16px;
+            }
+            
+            .logo-container {
+                flex-direction: column;
+                text-align: center;
+                gap: 0.5rem;
+            }
+            
+            .logo-text {
+                text-align: center !important;
+            }
+            
+            .phone-mockup {
+                max-width: 250px;
+                margin: 0 auto;
+            }
+            
+            .countdown-container {
+                flex-wrap: wrap;
+                gap: 0.5rem;
+                justify-content: center;
+            }
+            
+            .countdown-item {
+                min-width: 70px;
+                padding: 12px 8px;
+            }
+            
+            .countdown-number {
+                font-size: 1.5rem;
+            }
+            
+            .countdown-label {
+                font-size: 0.7rem;
+            }
+            
+            .email-input {
+                padding: 14px 20px;
+                font-size: 16px; /* Prevents zoom on iOS */
+            }
+            
+            .submit-button {
+                padding: 14px 20px;
+                font-size: 16px;
+            }
+            
+            .social-icons {
+                gap: 1rem;
+            }
+            
+            .footer-copyright {
+                padding: 16px 12px;
+            }
+            
+            .footer-copyright .text-sm {
+                font-size: 0.8rem;
+            }
+            
+            .footer-copyright .text-xs {
+                font-size: 0.7rem;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .demo-notice {
+                padding: 8px 12px;
+                font-size: 12px;
+            }
+            
+            .phone-mockup {
+                max-width: 200px;
+            }
+            
+            .countdown-container {
+                gap: 0.25rem;
+            }
+            
+            .countdown-item {
+                min-width: 60px;
+                padding: 8px 6px;
+            }
+            
+            .countdown-number {
+                font-size: 1.25rem;
+            }
+            
+            .countdown-label {
+                font-size: 0.65rem;
+            }
+            
+            .email-input {
+                padding: 12px 16px;
+            }
+            
+            .submit-button {
+                padding: 12px 16px;
+            }
+        }
+        
+        /* Enhanced How it Works Section - Horizontal Layout */
+        .how-it-works-container {
+            position: relative;
+            padding: 2rem 0;
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 2rem;
+        }
+        
+        @media (min-width: 768px) {
+            .how-it-works-container {
+                grid-template-columns: 1fr 1fr 1fr;
+                gap: 4rem;
+            }
+        }
+        
+        @media (min-width: 1024px) {
+            .how-it-works-container {
+                grid-template-columns: 1fr 1fr 1fr;
+                gap: 6rem;
+            }
+        }
+        
+        .step-card {
+            position: relative;
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.7));
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(16, 185, 129, 0.2);
+            border-radius: 20px;
+            padding: 3rem 4rem;
+            margin: 1rem 0;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            overflow: hidden;
+            min-height: 300px;
+        }
+        
+        .step-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, #10b981, #3b82f6, #10b981);
+            background-size: 200% 100%;
+            animation: gradientMove 3s ease-in-out infinite;
+        }
+        
+        .step-card:hover {
+            transform: translateY(-8px) scale(1.02);
+            box-shadow: 0 25px 50px -12px rgba(16, 185, 129, 0.25);
+            border-color: rgba(16, 185, 129, 0.4);
+        }
+        
+        .step-number {
+            position: absolute;
+            top: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 40px;
+            height: 40px;
+            background: linear-gradient(135deg, #10b981, #059669);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+            font-size: 1.2rem;
+            box-shadow: 0 8px 20px rgba(16, 185, 129, 0.3);
+            animation: stepPulse 2s ease-in-out infinite;
+        }
+        
+        @keyframes stepPulse {
+            0%, 100% { transform: translateX(-50%) scale(1); }
+            50% { transform: translateX(-50%) scale(1.1); }
+        }
+        
+        .step-icon {
+            width: 80px;
+            height: 80px;
+            margin: 0 auto 2rem;
+            background: linear-gradient(135deg, rgba(16, 185, 129, 0.1), rgba(59, 130, 246, 0.1));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+        }
+        
+        .step-card:hover .step-icon {
+            transform: scale(1.1) rotate(5deg);
+            background: linear-gradient(135deg, rgba(16, 185, 129, 0.2), rgba(59, 130, 246, 0.2));
+        }
+        
+        .step-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #1e293b;
+            margin-bottom: 1rem;
+            text-align: center;
+        }
+        
+        .step-description {
+            color: #64748b;
+            text-align: center;
+            line-height: 1.6;
+            font-size: 1rem;
+        }
+        
+        /* Horizontal Progress Connector */
+        .progress-connector-horizontal {
+            position: absolute;
+            top: 50%;
+            left: 0;
+            right: 0;
+            height: 2px;
+            background: linear-gradient(90deg, #10b981, #3b82f6);
+            z-index: 1;
+            display: none;
+        }
+        
+        @media (min-width: 768px) {
+            .progress-connector-horizontal {
+                display: block;
+            }
+        }
+        
+        .progress-connector-horizontal::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: -4px;
+            width: 10px;
+            height: 10px;
+            background: #10b981;
+            border-radius: 50%;
+            animation: connectorPulse 2s ease-in-out infinite;
+        }
+        
+        .progress-connector-horizontal::after {
+            content: '';
+            position: absolute;
+            right: 0;
+            top: -4px;
+            width: 10px;
+            height: 10px;
+            background: #3b82f6;
+            border-radius: 50%;
+            animation: connectorPulse 2s ease-in-out infinite 1s;
+        }
+        
+        @keyframes connectorPulse {
+            0%, 100% { transform: scale(1); opacity: 0.7; }
+            50% { transform: scale(1.3); opacity: 1; }
+        }
+        
+        /* Mobile responsive adjustments */
+        @media (max-width: 768px) {
+            .step-card {
+                padding: 1.5rem;
+                margin: 0.75rem 0;
+            }
+            
+            .step-number {
+                width: 35px;
+                height: 35px;
+                font-size: 1rem;
+            }
+            
+            .step-icon {
+                width: 50px;
+                height: 50px;
+            }
+        }
+        
+        /* Email Validation Styles */
+        .email-input.error {
+            border-color: #ef4444;
+            background-color: #fef2f2;
+        }
+        
+        .email-input.success {
+            border-color: #10b981;
+            background-color: #f0fdf4;
+        }
+        
+        .error-message {
+            color: #ef4444;
+            font-size: 0.875rem;
+            margin-top: 0.5rem;
+            display: none;
+        }
+        
+        .success-message {
+            color: #10b981;
+            font-size: 0.875rem;
+            margin-top: 0.5rem;
+            display: none;
+        }
+        
+        .loading-spinner {
+            display: none;
+            width: 20px;
+            height: 20px;
+            border: 2px solid #ffffff;
+            border-top: 2px solid transparent;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+            margin-right: 8px;
+        }
+        
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        
+        .submit-button.loading {
+            opacity: 0.7;
+            cursor: not-allowed;
+        }
+    </style>
+</head>
+<body class="bg-white min-h-screen relative overflow-x-hidden">
+    <!-- Floating Background Shapes -->
+    <div class="floating-shape"></div>
+    <div class="floating-shape"></div>
+    <div class="floating-shape"></div>
+    <div class="floating-shape"></div>
+    <div class="floating-shape"></div>
+    
+    <!-- Animated Particles -->
+    <div class="particle"></div>
+    <div class="particle"></div>
+    <div class="particle"></div>
+    <div class="particle"></div>
+    <div class="particle"></div>
+    <div class="particle"></div>
+    <div class="particle"></div>
+    <div class="particle"></div>
+    <div class="particle"></div>
+    
+    <!-- Gradient Background -->
+    <div class="gradient-bg fixed inset-0 -z-10"></div>
+    
+    <!-- Main Container -->
+    <div class="min-h-screen flex flex-col">
+        <div class="flex-1 flex items-center justify-center px-4 py-8">
+            <div class="max-w-6xl w-full text-center space-y-8">
+                
+                <!-- Logo -->
+                <div class="mb-8 fade-in">
+                    <div class="logo-container flex items-center justify-center space-x-3">
+                        <div class="relative">
+                            <img src="logo.png" alt="Tempus Logo" class="w-16 h-16 rounded-2xl shadow-lg hover-scale">
+                        </div>
+                        <div class="logo-text text-left">
+                            <h2 class="text-2xl font-bold text-slate-800">Tempus</h2>
+                            <p class="text-sm text-slate-500 font-medium">Smart Investing</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Hero Mockup -->
+                <div class="mb-8 fade-in-delay-1">
+                    <img src="https://images.unsplash.com/photo-1529653762956-b0a27278529c?q=80&w=2342&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="FinTech App Mockup - Modern Financial Dashboard" class="phone-mockup mx-auto hover-scale">
+                </div>
+                
+                <!-- Headline -->
+                <h1 class="text-4xl md:text-5xl font-bold text-slate-800 leading-tight mb-4 fade-in-delay-2">
+                    Stop losing to inflation.<br>
+                    <span class="gradient-text">Put your wealth on autopilot.</span>
+                </h1>
+                
+                <!-- Sub-headline -->
+                <p class="text-lg text-slate-600 mb-8 leading-relaxed fade-in-delay-3">
+                    Tempus automatically invests your spare cash so you can focus on your life while your money grows over time. No jargon, no complexity, just smart automation.
+                </p>
+                
+                <!-- Countdown Timer -->
+                <div class="mb-12 fade-in-delay-2">
+                    <p class="text-2xl text-slate-600 mb-8 font-semibold">Launching In</p>
+                    <div class="countdown-container flex justify-center space-x-6 text-center">
+                        <div class="countdown-item bg-white rounded-2xl shadow-xl p-8 min-w-[140px] hover-scale">
+                            <div id="days" class="countdown-number text-6xl font-extrabold text-emerald-600">12</div>
+                            <div class="countdown-label text-lg text-slate-500 uppercase tracking-wide font-semibold">Days</div>
+                        </div>
+                        <div class="countdown-item bg-white rounded-2xl shadow-xl p-8 min-w-[140px] hover-scale">
+                            <div id="hours" class="countdown-number text-6xl font-extrabold text-emerald-600">05</div>
+                            <div class="countdown-label text-lg text-slate-500 uppercase tracking-wide font-semibold">Hours</div>
+                        </div>
+                        <div class="countdown-item bg-white rounded-2xl shadow-xl p-8 min-w-[140px] hover-scale">
+                            <div id="minutes" class="countdown-number text-6xl font-extrabold text-emerald-600">41</div>
+                            <div class="countdown-label text-lg text-slate-500 uppercase tracking-wide font-semibold">Minutes</div>
+                        </div>
+                        <div class="countdown-item bg-white rounded-2xl shadow-xl p-8 min-w-[140px] hover-scale">
+                            <div id="seconds" class="countdown-number text-6xl font-extrabold text-emerald-600">55</div>
+                            <div class="countdown-label text-lg text-slate-500 uppercase tracking-wide font-semibold">Seconds</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- How it Works Section -->
+                <div class="mb-16 fade-in-delay-1">
+                    <h3 class="text-3xl font-bold text-slate-800 mb-12 text-center">How it Works</h3>
+
+                    <div class="how-it-works-container max-w-6xl mx-auto px-6 grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+                        
+                        <!-- Step 1 -->
+                        <div class="step-wrapper">
+                            <div class="step-card bg-white rounded-2xl shadow-md p-8 text-center hover:shadow-lg transition">
+                                <div class="step-icon mx-auto mb-4">
+                                    <svg class="w-10 h-10 text-emerald-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"></path>
+                                    </svg>
+                                </div>
+                                <h4 class="step-title text-xl font-semibold mb-2">Link Your Account</h4>
+                                <p class="step-description text-slate-600">Securely connect your bank account with bank-level encryption and advanced security protocols.</p>
+                            </div>
+                        </div>
+
+                        <!-- Step 2 -->
+                        <div class="step-wrapper">
+                            <div class="step-card bg-white rounded-2xl shadow-md p-8 text-center hover:shadow-lg transition">
+                                <div class="step-icon mx-auto mb-4">
+                                    <svg class="w-10 h-10 text-emerald-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"></path>
+                                    </svg>
+                                </div>
+                                <h4 class="step-title text-xl font-semibold mb-2">Set Your Goal</h4>
+                                <p class="step-description text-slate-600">Tell us your timeline and risk comfort level. Our AI analyzes your preferences to create a personalized strategy.</p>
+                            </div>
+                        </div>
+
+                        <!-- Step 3 -->
+                        <div class="step-wrapper">
+                            <div class="step-card bg-white rounded-2xl shadow-md p-8 text-center hover:shadow-lg transition">
+                                <div class="step-icon mx-auto mb-4">
+                                    <svg class="w-10 h-10 text-emerald-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+                                    </svg>
+                                </div>
+                                <h4 class="step-title text-xl font-semibold mb-2">We Automate the Rest</h4>
+                                <p class="step-description text-slate-600">Our AI handles everything while you focus on your life — smart rebalancing, tax optimization, and continuous monitoring.</p>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+                
+                <!-- Email Form -->
+                <div class="mb-6 fade-in-delay-3">
+                    <form id="emailForm" class="space-y-4">
+                        <div class="relative">
+                            <input 
+                                type="email" 
+                                id="email" 
+                                placeholder="Enter your email address"
+                                class="email-input w-full px-6 py-4 rounded-full border border-slate-200 focus:border-emerald-500 focus:ring-2 focus:ring-emerald-400 focus:ring-opacity-50 outline-none transition-all duration-200 text-slate-700 hover-scale"
+                                required
+                            >
+                            <div class="error-message" id="errorMessage"></div>
+                            <div class="success-message" id="successMessage"></div>
+                        </div>
+                        <button 
+                            type="submit"
+                            id="submitButton"
+                            class="submit-button w-full bg-emerald-600 hover:bg-emerald-700 focus:bg-emerald-700 focus:ring-4 focus:ring-emerald-400 focus:ring-opacity-50 text-white font-semibold py-4 px-8 rounded-full transition-all duration-200 hover-scale pulse-glow"
+                        >
+                            <span class="loading-spinner" id="loadingSpinner"></span>
+                            <span id="buttonText">Get Early Access</span>
+                        </button>
+                    </form>
+                    <p class="text-sm text-slate-500 mt-3 flex items-center justify-center">
+                        <svg class="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M5 9V7a5 5 0 0110 0v2a2 2 0 012 2v5a2 2 0 01-2 2H5a2 2 0 01-2-2v-5a2 2 0 012-2zm8-2v2H7V7a3 3 0 016 0z" clip-rule="evenodd"></path>
+                        </svg>
+                        Bank-level security. Your data is encrypted and protected.
+                    </p>
+                </div>
+                
+                <!-- Security Section -->
+                <div class="mb-8 fade-in-delay-1">
+                    <div class="bg-slate-50 rounded-lg p-6 text-center card-hover">
+                        <h3 class="text-lg font-semibold text-slate-800 mb-3">Bank-Level Security</h3>
+                        <div class="flex justify-center items-center space-x-6 mb-4">
+                            <div class="flex items-center space-x-2">
+                                <svg class="w-5 h-5 text-emerald-600" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M5 9V7a5 5 0 0110 0v2a2 2 0 012 2v5a2 2 0 01-2 2H5a2 2 0 01-2-2v-5a2 2 0 012-2zm8-2v2H7V7a3 3 0 016 0z" clip-rule="evenodd"></path>
+                                </svg>
+                                <span class="text-sm text-slate-600">256-bit Encryption</span>
+                            </div>
+                            <div class="flex items-center space-x-2">
+                                <svg class="w-5 h-5 text-emerald-600" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M5 9V7a5 5 0 0110 0v2a2 2 0 012 2v5a2 2 0 01-2 2H5a2 2 0 01-2-2v-5a2 2 0 012-2zm8-2v2H7V7a3 3 0 016 0z" clip-rule="evenodd"></path>
+                                </svg>
+                                <span class="text-sm text-slate-600">SEC Registered</span>
+                            </div>
+                            <div class="flex items-center space-x-2">
+                                <svg class="w-5 h-5 text-emerald-600" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M5 9V7a5 5 0 0110 0v2a2 2 0 012 2v5a2 2 0 01-2 2H5a2 2 0 01-2-2v-5a2 2 0 012-2zm8-2v2H7V7a3 3 0 016 0z" clip-rule="evenodd"></path>
+                                </svg>
+                                <span class="text-sm text-slate-600">FDIC Insured</span>
+                            </div>
+                        </div>
+                        <p class="text-sm text-slate-600">Your investments are protected with the same security standards as major banks</p>
+                    </div>
+                </div>
+                
+                <!-- Social Proof -->
+                <p class="text-slate-600 font-medium mb-8 fade-in-delay-2">
+                    Join <span class="text-emerald-600 font-semibold">2,500+</span> smart investors who are already on the waitlist.
+                </p>
+            </div>
+        </div>
+        
+        <!-- Copyright Footer -->
+        <footer class="footer-copyright py-6 px-4">
+            <div class="max-w-4xl mx-auto text-center">
+                <div class="text-sm text-slate-600 mb-2">
+                    © 2025 Tempus. All rights reserved.
+                </div>
+                <div class="text-xs text-slate-500 mb-3">
+                    Tempus is a registered investment advisor with the SEC.
+                    <br>Investing involves risk, including possible loss of principal.
+                </div>
+                <div class="text-xs text-slate-400">
+                    <a href="terms.html" class="hover:text-slate-600 transition-colors">Terms of Service</a> | 
+                    <a href="privacy.html" class="hover:text-slate-600 transition-colors">Privacy Policy</a> | 
+                    <a href="disclosures.html" class="hover:text-slate-600 transition-colors">Disclosures</a>
+                </div>
+                <div class="text-xs text-slate-400 mt-3">
+                    Developed by <a href="https://dacso.uk" class="text-emerald-600 hover:text-emerald-700 transition-colors font-semibold" target="_blank">Dacso.uk</a>
+                </div>
+            </div>
+        </footer>
+    </div>
+    
+    <!-- Floating Action Button -->
+    <div class="fab" onclick="document.getElementById('email').focus()">
+        <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
+        </svg>
+    </div>
+
+    <script>
+        // Enhanced email validation and submission
+        document.getElementById('emailForm').addEventListener('submit', async function(e) {
+            e.preventDefault();
+            const email = document.getElementById('email').value.trim();
+            const emailInput = document.getElementById('email');
+            const errorMessage = document.getElementById('errorMessage');
+            const successMessage = document.getElementById('successMessage');
+            const submitButton = document.getElementById('submitButton');
+            const loadingSpinner = document.getElementById('loadingSpinner');
+            const buttonText = document.getElementById('buttonText');
+
+            // Clear previous messages
+            clearMessages();
+            
+            if (!email) {
+                showError('Please enter your email address.');
+                emailInput.classList.add('error');
+                return;
+            }
+            
+            if (!isValidEmail(email)) {
+                showError('Please enter a valid email address.');
+                emailInput.classList.add('error');
+                return;
+            }
+
+            // Show loading state
+            setLoadingState(true);
+            emailInput.classList.add('success');
+
+            try {
+                // Try to validate domain with a simple DNS-like check
+                const domain = email.split('@')[1];
+                const canResolve = await checkDomainResolution(domain);
+
+                if (!canResolve) {
+                    throw new Error('Domain verification failed');
+            }
+            
+            // Simulate successful submission
+                showSuccess('Email verified successfully! Redirecting...');
+
+                // Redirect to confirmation page after 2 seconds
+                setTimeout(() => {
+                    window.location.href = 'confirmation.html?email=' + encodeURIComponent(email);
+                }, 2000);
+
+            } catch (error) {
+                showError('Unable to verify email domain. Please try a different email address.');
+                emailInput.classList.add('error');
+                setLoadingState(false);
+            }
+        });
+
+        // Simple domain resolution check (limited by browser restrictions)
+        async function checkDomainResolution(domain) {
+            // For demo purposes, we'll use a simple heuristic
+            // In a real application, this would be done server-side
+
+            // Check if domain exists in our whitelist of known good domains
+            const knownGoodDomains = [
+                'gmail.com', 'yahoo.com', 'hotmail.com', 'outlook.com',
+                'icloud.com', 'protonmail.com', 'mail.com', 'yandex.com',
+                'zoho.com', 'aol.com', 'me.com', 'live.com'
+            ];
+
+            if (knownGoodDomains.includes(domain.toLowerCase())) {
+                return true;
+            }
+
+            // For other domains, we'll do a basic format check
+            // In production, you'd make an API call to a DNS service
+            try {
+                // This is a fallback - in reality, DNS resolution requires server-side code
+                const response = await fetch(`https://dns.google/resolve?name=${domain}&type=MX`, {
+                    method: 'GET',
+                    headers: {
+                        'Accept': 'application/json',
+                    }
+                });
+
+                if (response.ok) {
+                    const data = await response.json();
+                    return data.Answer && data.Answer.length > 0;
+                }
+            } catch (error) {
+                console.log('DNS check failed, falling back to heuristic');
+            }
+
+            // Fallback: basic domain structure validation
+            return domain.length >= 4 && domain.split('.').length >= 2;
+        }
+        
+        function isValidEmail(email) {
+            // Comprehensive email validation with DNS format checking
+            const emailRegex = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$/;
+
+            if (!emailRegex.test(email)) return false;
+
+            const domain = email.split('@')[1].toLowerCase();
+
+            // Check for obviously fake domains
+            const fakeDomains = [
+                'nonolak.com',
+                'madeup.com',
+                'fakeemail.com',
+                'notreal.com',
+                'invalid.com',
+                'dummy.com',
+                'sample.com',
+                'placeholder.com',
+                'nonexistent.com',
+                'bogus.com',
+                'spam.com',
+                'test.com',
+                'fake.com',
+                'example.com',
+                'local',
+                'localhost',
+                'temp',
+                'temporary',
+                'dlkfnklf.com',
+                'asdfghjkl.com',
+                'qwertyuiop.com',
+                'randomdomain.com',
+                'nonsense.com',
+                'gibberish.com'
+            ];
+
+            if (fakeDomains.includes(domain)) return false;
+
+            // Check for suspicious patterns in domain
+            const suspiciousPatterns = [
+                /^\d+\.\d+\.\d+\.\d+$/, // IP addresses
+                /^[a-z]{1,3}$/, // Very short TLDs
+                /test/i,
+                /fake/i,
+                /spam/i,
+                /invalid/i,
+                /example/i,
+                /sample/i,
+                /placeholder/i,
+                /random/i,
+                /nonsense/i,
+                /gibberish/i,
+                /keyboard/i,
+                /typing/i
+            ];
+
+            for (let pattern of suspiciousPatterns) {
+                if (pattern.test(domain)) return false;
+            }
+
+            // Check for keyboard smashing patterns (consecutive letters from keyboard rows)
+            const keyboardPatterns = [
+                /[qwertyuiop]{6,}/i,  // Top row
+                /[asdfghjkl]{6,}/i,   // Middle row
+                /[zxcvbnm]{5,}/i,     // Bottom row
+                /[qazwsxedcrfvtgbyhnujmikolp]{8,}/i // Diagonal patterns
+            ];
+
+            for (let pattern of keyboardPatterns) {
+                if (pattern.test(domain)) return false;
+            }
+
+            // Check for repeated characters or obvious random patterns
+            if (/(.)\1{4,}/.test(domain)) return false; // 5+ repeated characters
+            if (/^[bcdfghjklmnpqrstvwxyz]{8,}$/.test(domain)) return false; // Only consonants
+            if (/^[aeiou]{5,}$/.test(domain)) return false; // Only vowels
+
+            // Basic domain structure validation
+            if (domain.split('.').length < 2) return false;
+
+            // Check for valid domain characters
+            if (!/^[a-zA-Z0-9.-]+$/.test(domain)) return false;
+
+            // Check domain length (reasonable limits)
+            if (domain.length > 253) return false; // Max domain length
+
+            // Check individual label lengths
+            const labels = domain.split('.');
+            for (let label of labels) {
+                if (label.length > 63) return false; // Max label length
+                if (label.length < 1) return false; // Empty labels
+            }
+
+            // Check if domain looks randomly generated (like dlkfnklf)
+            const consonants = 'bcdfghjklmnpqrstvwxyz';
+            const vowels = 'aeiou';
+            let consonantCount = 0;
+            let vowelCount = 0;
+
+            for (let char of domain.toLowerCase()) {
+                if (consonants.includes(char)) consonantCount++;
+                if (vowels.includes(char)) vowelCount++;
+            }
+
+            // If mostly consonants or has suspicious patterns, likely fake
+            if (consonantCount > vowelCount * 3) return false;
+
+            return true;
+        }
+        
+        function showError(message) {
+            const errorMessage = document.getElementById('errorMessage');
+            errorMessage.textContent = message;
+            errorMessage.style.display = 'block';
+        }
+        
+        function showSuccess(message) {
+            const successMessage = document.getElementById('successMessage');
+            successMessage.textContent = message;
+            successMessage.style.display = 'block';
+        }
+        
+        function clearMessages() {
+            const errorMessage = document.getElementById('errorMessage');
+            const successMessage = document.getElementById('successMessage');
+            const emailInput = document.getElementById('email');
+            
+            errorMessage.style.display = 'none';
+            successMessage.style.display = 'none';
+            emailInput.classList.remove('error', 'success');
+        }
+        
+        function setLoadingState(loading) {
+            const submitButton = document.getElementById('submitButton');
+            const loadingSpinner = document.getElementById('loadingSpinner');
+            const buttonText = document.getElementById('buttonText');
+            
+            if (loading) {
+                submitButton.classList.add('loading');
+                loadingSpinner.style.display = 'inline-block';
+                buttonText.textContent = 'Verifying...';
+                submitButton.disabled = true;
+            } else {
+                submitButton.classList.remove('loading');
+                loadingSpinner.style.display = 'none';
+                buttonText.textContent = 'Get Early Access';
+                submitButton.disabled = false;
+            }
+        }
+        
+        // Real-time email validation
+        document.getElementById('email').addEventListener('input', function() {
+            const email = this.value.trim();
+            const emailInput = this;
+            
+            if (email && !isValidEmail(email)) {
+                emailInput.classList.add('error');
+                emailInput.classList.remove('success');
+            } else if (email && isValidEmail(email)) {
+                emailInput.classList.add('success');
+                emailInput.classList.remove('error');
+            } else {
+                emailInput.classList.remove('error', 'success');
+            }
+        });
+        
+        // Countdown timer
+        function updateCountdown() {
+            // Set target date (12 days from now as specified)
+            const now = new Date().getTime();
+            const targetDate = now + (12 * 24 * 60 * 60 * 1000) + (5 * 60 * 60 * 1000) + (42 * 60 * 1000) + (18 * 1000);
+            
+            function tick() {
+                const now = new Date().getTime();
+                const distance = targetDate - now;
+                
+                if (distance < 0) {
+                    document.getElementById('days').textContent = '00';
+                    document.getElementById('hours').textContent = '00';
+                    document.getElementById('minutes').textContent = '00';
+                    document.getElementById('seconds').textContent = '00';
+                    return;
+                }
+                
+                const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+                const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+                const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+                
+                document.getElementById('days').textContent = days.toString().padStart(2, '0');
+                document.getElementById('hours').textContent = hours.toString().padStart(2, '0');
+                document.getElementById('minutes').textContent = minutes.toString().padStart(2, '0');
+                document.getElementById('seconds').textContent = seconds.toString().padStart(2, '0');
+            }
+            
+            tick(); // Initial call
+            setInterval(tick, 1000); // Update every second
+        }
+        
+        // Initialize countdown when page loads
+        document.addEventListener('DOMContentLoaded', updateCountdown);
+        
+        // Smooth scrolling for future sections
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>

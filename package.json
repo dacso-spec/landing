@@ -1,0 +1,39 @@
+{
+  "name": "tempus-fintech-landing",
+  "version": "1.0.0",
+  "description": "Premium FinTech landing page for Tempus - Smart Automated Investing Platform",
+  "main": "index.html",
+  "scripts": {
+    "start": "python -m http.server 8000",
+    "serve": "python3 -m http.server 8000",
+    "dev": "live-server --port=8000 --open=/index.html"
+  },
+  "keywords": [
+    "fintech",
+    "landing-page",
+    "investment",
+    "automated-investing",
+    "tempus",
+    "responsive",
+    "tailwind",
+    "html",
+    "css",
+    "javascript"
+  ],
+  "author": "Dacso.uk",
+  "license": "Commercial",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/yourusername/tempus-fintech-landing.git"
+  },
+  "bugs": {
+    "url": "https://github.com/yourusername/tempus-fintech-landing/issues"
+  },
+  "homepage": "https://github.com/yourusername/tempus-fintech-landing#readme",
+  "devDependencies": {
+    "live-server": "^1.2.2"
+  },
+  "engines": {
+    "node": ">=14.0.0"
+  }
+}

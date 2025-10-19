@@ -1,0 +1,15 @@
+# Netlify redirects file for FinTech Landing Page Template
+# This file handles URL redirects and routing for the Netlify deployment
+
+# Redirect root to index.html
+/ /index.html 200
+
+# Handle SPA routing (if needed in future)
+/* /index.html 200
+
+# Security headers
+/*
+  X-Frame-Options: DENY
+  X-Content-Type-Options: nosniff
+  Referrer-Policy: strict-origin-when-cross-origin
+  Permissions-Policy: camera=(), microphone=(), geolocation=()
